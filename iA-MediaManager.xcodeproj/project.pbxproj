@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A6387CFA235466010009E93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387CF9235466010009E93C /* AppDelegate.swift */; };
-		A6387CFC235466010009E93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387CFB235466010009E93C /* SceneDelegate.swift */; };
 		A6387CFE235466010009E93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387CFD235466010009E93C /* ViewController.swift */; };
 		A6387D01235466010009E93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6387CFF235466010009E93C /* Main.storyboard */; };
 		A6387D03235466040009E93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6387D02235466040009E93C /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		A6387CF6235466010009E93C /* iA-MediaManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iA-MediaManager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6387CF9235466010009E93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6387CFB235466010009E93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A6387CFD235466010009E93C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6387D00235466010009E93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6387D02235466040009E93C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				A6387CF9235466010009E93C /* AppDelegate.swift */,
-				A6387CFB235466010009E93C /* SceneDelegate.swift */,
 				A6387CFD235466010009E93C /* ViewController.swift */,
 				A6387CFF235466010009E93C /* Main.storyboard */,
 				A6387D02235466040009E93C /* Assets.xcassets */,
@@ -140,7 +137,6 @@
 			files = (
 				A6387CFE235466010009E93C /* ViewController.swift in Sources */,
 				A6387CFA235466010009E93C /* AppDelegate.swift in Sources */,
-				A6387CFC235466010009E93C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +282,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iA-MediaManager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,7 +290,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com..iA-MediaManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "iA-MediaManager/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com..iA-MediaManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
