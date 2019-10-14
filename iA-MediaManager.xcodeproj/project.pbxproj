@@ -12,6 +12,9 @@
 		A6387D01235466010009E93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6387CFF235466010009E93C /* Main.storyboard */; };
 		A6387D03235466040009E93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6387D02235466040009E93C /* Assets.xcassets */; };
 		A6387D06235466040009E93C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6387D04235466040009E93C /* LaunchScreen.storyboard */; };
+		A6387D11235475730009E93C /* iA-MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D10235475730009E93C /* iA-MediaType.swift */; };
+		A6387D13235476690009E93C /* iA-MM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D12235476690009E93C /* iA-MM.swift */; };
+		A6387D15235477B70009E93C /* iA-MM_Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D14235477B70009E93C /* iA-MM_Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		A6387D02235466040009E93C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6387D05235466040009E93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6387D07235466040009E93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6387D10235475730009E93C /* iA-MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MediaType.swift"; sourceTree = "<group>"; };
+		A6387D12235476690009E93C /* iA-MM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MM.swift"; sourceTree = "<group>"; };
+		A6387D14235477B70009E93C /* iA-MM_Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MM_Strings.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		A6387CF8235466010009E93C /* iA-MediaManager */ = {
 			isa = PBXGroup;
 			children = (
+				A6387D0D23546C110009E93C /* MM-Files */,
 				A6387CF9235466010009E93C /* AppDelegate.swift */,
 				A6387CFD235466010009E93C /* ViewController.swift */,
 				A6387CFF235466010009E93C /* Main.storyboard */,
@@ -62,6 +69,16 @@
 				A6387D07235466040009E93C /* Info.plist */,
 			);
 			path = "iA-MediaManager";
+			sourceTree = "<group>";
+		};
+		A6387D0D23546C110009E93C /* MM-Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6387D10235475730009E93C /* iA-MediaType.swift */,
+				A6387D12235476690009E93C /* iA-MM.swift */,
+				A6387D14235477B70009E93C /* iA-MM_Strings.swift */,
+			);
+			path = "MM-Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6387CFE235466010009E93C /* ViewController.swift in Sources */,
+				A6387D15235477B70009E93C /* iA-MM_Strings.swift in Sources */,
+				A6387D11235475730009E93C /* iA-MediaType.swift in Sources */,
+				A6387D13235476690009E93C /* iA-MM.swift in Sources */,
 				A6387CFA235466010009E93C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
