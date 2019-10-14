@@ -15,16 +15,14 @@ import AVFoundation
 import Photos
 
 
-class MM {
+class MediaManager: NSObject{
     
-    static let shared = MM()
-    fileprivate var currentVC: UIViewController?
+    static let shared = MediaManager()
+    var currentVC: UIViewController?
     
     var imageHandlerBlock: ((UIImage) -> Void)?
     var videoHandlerBlock: ((NSURL) -> Void)?
     var fileHandlerBlock: ((URL) -> Void)?
-//    Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
-
     
     var AppName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
     
@@ -111,11 +109,9 @@ class MM {
     func openCamera(){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             let myPickerController = UIImagePickerController()
-            if let _ = currentVC, let _ = currentVC as? UIImagePickerControllerDelegate & UINavigationControllerDelegate{
-                myPickerController.delegate = (currentVC as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+                myPickerController.delegate = self
                 myPickerController.sourceType = .camera
-                currentVC!.present(myPickerController, animated: true, completion: nil)
-            }
+                currentVC?.present(myPickerController, animated: true, completion: nil)
         }
     }
     
@@ -123,11 +119,9 @@ class MM {
     func photoLibrary(){
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             let myPickerController = UIImagePickerController()
-            if let _ = currentVC, let _ = currentVC as? UIImagePickerControllerDelegate & UINavigationControllerDelegate{
-                myPickerController.delegate = (currentVC as! UIImagePickerControllerDelegate & UINavigationControllerDelegate)
+                myPickerController.delegate = self
                 myPickerController.sourceType = .photoLibrary
-                currentVC!.present(myPickerController, animated: true, completion: nil)
-            }
+                currentVC?.present(myPickerController, animated: true, completion: nil)
         }
     }
 

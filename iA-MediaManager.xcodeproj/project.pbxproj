@@ -15,6 +15,7 @@
 		A6387D11235475730009E93C /* iA-MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D10235475730009E93C /* iA-MediaType.swift */; };
 		A6387D13235476690009E93C /* iA-MM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D12235476690009E93C /* iA-MM.swift */; };
 		A6387D15235477B70009E93C /* iA-MM_Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D14235477B70009E93C /* iA-MM_Strings.swift */; };
+		A6387D19235482980009E93C /* iA-MM_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6387D18235482980009E93C /* iA-MM_Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A6387D10235475730009E93C /* iA-MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MediaType.swift"; sourceTree = "<group>"; };
 		A6387D12235476690009E93C /* iA-MM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MM.swift"; sourceTree = "<group>"; };
 		A6387D14235477B70009E93C /* iA-MM_Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MM_Strings.swift"; sourceTree = "<group>"; };
+		A6387D18235482980009E93C /* iA-MM_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iA-MM_Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				A6387D10235475730009E93C /* iA-MediaType.swift */,
 				A6387D12235476690009E93C /* iA-MM.swift */,
 				A6387D14235477B70009E93C /* iA-MM_Strings.swift */,
+				A6387D18235482980009E93C /* iA-MM_Extensions.swift */,
 			);
 			path = "MM-Files";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				A6387CFE235466010009E93C /* ViewController.swift in Sources */,
 				A6387D15235477B70009E93C /* iA-MM_Strings.swift in Sources */,
 				A6387D11235475730009E93C /* iA-MediaType.swift in Sources */,
+				A6387D19235482980009E93C /* iA-MM_Extensions.swift in Sources */,
 				A6387D13235476690009E93C /* iA-MM.swift in Sources */,
 				A6387CFA235466010009E93C /* AppDelegate.swift in Sources */,
 			);

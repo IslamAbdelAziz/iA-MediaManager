@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addBtnTapped(){
-        MM.shared.uploadBtnTapped(vc: self)
+        MediaManager.shared.uploadBtnTapped(vc: self)
     }
 
 }
