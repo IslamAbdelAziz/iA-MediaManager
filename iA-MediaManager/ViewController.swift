@@ -23,6 +23,15 @@ class ViewController: UIViewController {
         MediaManager.shared.imageHandlerBlock = { (image) in
             self.imgView.image = image
         }
+        
+        MediaManager.shared.videoHandlerBlock = { (videoURL) in
+            print("Video URL:  \(videoURL.absoluteString)")
+        }
+        
+        MediaManager.shared.fileHandlerBlock = { (fileURL) in
+            print("Video URL:  \(fileURL.absoluteString)")
+        }
+        
     }
 
 }
