@@ -18,11 +18,23 @@ extension MediaManager: UIImagePickerControllerDelegate, UINavigationControllerD
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        currentVC?.dismiss(animated: true) {
-            if let photo = info[.originalImage] as? UIImage{
-                self.imageHandlerBlock?(photo)
-            }
+        if let image = info[.originalImage] as? UIImage {
+            self.imageHandlerBlock?(image)
+        } else{
+            print("Something went wrong in  image")
         }
+        
+        if let videoUrl = info[.mediaURL] as? NSURL{
+            print("videourl: ", videoUrl)
+            //trying compression of video
+            let data = NSData(contentsOf: videoUrl as URL)!
+            print("File size before compression: \(Double(data.length / 1048576)) mb")
+            self.videoHandlerBlock?(videoUrl)
+        }
+        else{
+            print("Something went wrong in  video")
+        }
+        currentVC?.dismiss(animated: true, completion: nil)
     }
     
     

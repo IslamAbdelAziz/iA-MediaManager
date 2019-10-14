@@ -27,7 +27,7 @@ class MediaManager: NSObject{
     var AppName = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
     
     
-    func uploadBtnTapped(vc: UIViewController){
+    func addMedia(vc: UIViewController, getPhotos: Bool = true, getVideos: Bool = true, getFiles: Bool = true, getCamera: Bool = true){
         
         currentVC = vc
         
@@ -49,10 +49,10 @@ class MediaManager: NSObject{
         let actionCancel = UIAlertAction(title: MM_Strings.cancelBtnTitle.rawValue, style: .cancel) { (_) in
             
         }
-        alert.addAction(actionCamera)
-        alert.addAction(actionPhotoLibrary)
-        alert.addAction(actionVideo)
-        alert.addAction(actionFile)
+        if getCamera{ alert.addAction(actionCamera) }
+        if getPhotos{ alert.addAction(actionPhotoLibrary) }
+        if getVideos{ alert.addAction(actionVideo) }
+        if getFiles{ alert.addAction(actionFile) }
         alert.addAction(actionCancel)
         currentVC?.present(alert, animated: true, completion: nil)
         
