@@ -29,3 +29,11 @@ extension MediaManager: UIImagePickerControllerDelegate, UINavigationControllerD
     
 }
 
+
+extension MediaManager: UIDocumentPickerDelegate{
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        if let url = urls.first{
+            self.fileHandlerBlock?(url)
+        }
+    }
+}

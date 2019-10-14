@@ -43,7 +43,7 @@ class MediaManager: NSObject{
         }
 
         let actionFile = UIAlertAction(title: MM_Strings.file.rawValue, style: .default) { (_) in
-//            self.documentPicker()
+            self.files()
             
         }
         let actionCancel = UIAlertAction(title: MM_Strings.cancelBtnTitle.rawValue, style: .cancel) { (_) in
@@ -143,6 +143,13 @@ class MediaManager: NSObject{
             myPickerController.mediaTypes = [kUTTypeMovie as String, kUTTypeVideo as String]
             currentVC?.present(myPickerController, animated: true, completion: nil)
         }
+    }
+    
+    func files(){
+        let importMenu = UIDocumentPickerViewController(documentTypes: [String(kUTTypePDF)], in: .import)
+        importMenu.delegate = self
+        importMenu.modalPresentationStyle = .formSheet
+        currentVC?.present(importMenu, animated: true, completion: nil)
     }
     
     
