@@ -19,8 +19,8 @@ extension MediaManager: UIImagePickerControllerDelegate, UINavigationControllerD
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         currentVC?.dismiss(animated: true) {
-            if  let photo = info[.originalImage] as? UIImage{
-//                self.arrayOfSelectedItems.append(photo)
+            if let photo = info[.originalImage] as? UIImage{
+                self.imageHandlerBlock?(photo)
             }
         }
     }

@@ -35,10 +35,13 @@ class MediaManager: NSObject{
         let actionCamera = UIAlertAction(title: MM_Strings.camera.rawValue, style: .default) { (_) in
             self.checkAuthorizationState(iA_MediaTypeEnum: .camera)
         }
-        let actionGallary = UIAlertAction(title: MM_Strings.photoLibrary.rawValue, style: .default) { (_) in
+        let actionPhotoLibrary = UIAlertAction(title: MM_Strings.photoLibrary.rawValue, style: .default) { (_) in
             self.checkAuthorizationState(iA_MediaTypeEnum: .photoLibrary)
         }
-        
+        let actionVideo = UIAlertAction(title: MM_Strings.video.rawValue, style: .default) { (_) in
+            self.checkAuthorizationState(iA_MediaTypeEnum: .video)
+        }
+
         let actionFile = UIAlertAction(title: MM_Strings.file.rawValue, style: .default) { (_) in
 //            self.documentPicker()
             
@@ -47,7 +50,8 @@ class MediaManager: NSObject{
             
         }
         alert.addAction(actionCamera)
-        alert.addAction(actionGallary)
+        alert.addAction(actionPhotoLibrary)
+        alert.addAction(actionVideo)
         alert.addAction(actionFile)
         alert.addAction(actionCancel)
         currentVC?.present(alert, animated: true, completion: nil)
@@ -84,7 +88,10 @@ class MediaManager: NSObject{
                 if iA_MediaTypeEnum == iA_MediaType.photoLibrary{
                     photoLibrary()
                 }
-                
+                if iA_MediaTypeEnum == iA_MediaType.video{
+                    videoLibrary()
+                }
+
             case .denied, .restricted:
                 showAccessDeniedAlert()
                 
@@ -92,10 +99,13 @@ class MediaManager: NSObject{
                 PHPhotoLibrary.requestAuthorization({ (status) in
                     if status == PHAuthorizationStatus.authorized{
                         // photo library access given
-                        self.photoLibrary()
-                    }
-                    if iA_MediaTypeEnum == iA_MediaType.video{
-                        self.photoLibrary()
+                        
+                        if iA_MediaTypeEnum == iA_MediaType.photoLibrary{
+                            self.photoLibrary()
+                        }
+                        if iA_MediaTypeEnum == iA_MediaType.video{
+                            self.videoLibrary()
+                        }
                     }
                 })
             default:
@@ -125,6 +135,16 @@ class MediaManager: NSObject{
         }
     }
 
+    func videoLibrary(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self
+            myPickerController.sourceType = .photoLibrary
+            myPickerController.mediaTypes = [kUTTypeMovie as String, kUTTypeVideo as String]
+            currentVC?.present(myPickerController, animated: true, completion: nil)
+        }
+    }
+    
     
     func showAccessDeniedAlert(){
         let alertVC = UIAlertController(title:  "Access Denied", message: "\(AppName ?? "App") \(MM_Strings.MM_accessDenied.rawValue)", preferredStyle: .alert)
